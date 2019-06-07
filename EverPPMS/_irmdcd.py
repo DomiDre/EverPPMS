@@ -13,6 +13,8 @@ class IRMDCD:
 
     self.verbose = verbose
 
+    self._Ms = 0
+
   def printlog(self, message):
     print(message)
     self.log = self.log + message + '\n'
@@ -120,6 +122,14 @@ class IRMDCD:
 
     return self.H_irm, self.M_irm, self.sM_irm, self.H_dcd, self.M_dcd, self.sM_dcd
 
+  @property
+  def Ms(self):
+    return self._Ms
+
+  @Ms.setter
+  def Ms(self, _Ms):
+    self.printlog(f'Setting saturation magnetization to {_Ms}')
+    self._Ms = _Ms
 
   @property
   def deltaM(self):
