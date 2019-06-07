@@ -78,6 +78,11 @@ class Evaluator:
       M.append(forc_line_M)
       sM.append(forc_line_sM)
 
+    self.H_a_raw = np.array(H_a)
+    self.H_b_raw = np.array(H_b)
+    self.M_raw = np.array(M)
+    self.sM_raw = np.array(sM)
+    
     Na = len(H_a)
     Nb = len(H_b[-1])
     self.H_a = np.array(H_a)
