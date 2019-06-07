@@ -1,7 +1,7 @@
 import numpy as np
 import lmfit, sys
 
-class Evaluator:
+class FORC:
   def __init__(self, filename, H_sat, H_step, verbose=False):
     self.log = ''
     self.H_sat = H_sat
