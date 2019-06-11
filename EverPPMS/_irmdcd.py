@@ -161,8 +161,8 @@ class IRMDCD:
       raw_filename = filename + '_raw.dat'
       filename = filename + '.dat'
 
-    open(raw_filename, 'w') as f:
-      f.write('#' + self.log.replace('\n','#\n') + '\n')
+    with open(raw_filename, 'w') as f:
+      f.write('#' + self.log.replace('\n','\n#') + '\n')
 
       f.write('\n#IRM\n')
       f.write('#B / T\tM / memu\tsM / memu\n')
@@ -175,10 +175,10 @@ class IRMDCD:
         f.write(f'{self.B_dcd[idx_dcd]}\t{self.M_dcd[idx_dcd]}\t{self.sM_dcd[idx_dcd]}\n')
 
     if self.calculated_deltaM:
-      open(filename, 'w') as f:
-        f.write('#' + self.log.replace('\n','#\n') + '\n')
+      with open(filename, 'w') as f:
+        f.write('#' + self.log.replace('\n','\n#') + '\n')
 
         f.write('#deltaM\n')
         f.write('#B / T\tdeltaM / memu\tsDeltaM / memu\n')
-        for idx_irm in range(len(self.B_irm)):
-          f.write(f'{self.B_deltaM[idx_irm]}\t{self.deltaM[idx_irm]}\t{self.sDeltaM[idx_irm]}\n')
+        for idx_delta in range(len(self.B_deltaM)):
+          f.write(f'{self.B_deltaM[idx_delta]}\t{self.deltaM[idx_delta]}\t{self.sDeltaM[idx_delta]}\n')
