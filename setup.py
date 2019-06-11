@@ -9,7 +9,7 @@ with open('LICENSE') as f:
 
 setup(
   name='EverPPMS',
-  version='0.1.0',
+  version='0.2.0',
   description='Script to generate sequence files for an Evercool II, as well as to analyze them',
   url='https://github.com/DomiDre/EverPPMS',
   author='Dominique Dresen',
